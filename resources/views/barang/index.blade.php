@@ -5,13 +5,20 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/dataTables.jqueryui.min.js"></script>
+  <script src="https://cdn.datatables.net/scroller/2.0.5/js/dataTables.scroller.min.js"></script>
+
 </head>
 
 <body>
   <div class="container">
     <div class="row p-2">
       @include('barang.add')
+      @include('barang.find')
       @include('barang.edit')
+      @include('barang.delete')
     </div>
     <div class="row">
 
@@ -40,9 +47,9 @@
             <td>{{$d->created_at}}</td>
             <td>{{$d->updated_at}}</td>
             <td>
-              <a href="#" class="btn btn-info btn-sm">Info</a>
-              <a href="/barang/find/{{$d->id}}" class="btn btn-warning btn-sm">Edit</a>
-              <a href="/barang/delete/{{$d->id}}" class="btn btn-danger btn-sm">Delete</a>
+              <a href="/barang/find/{{$d->id}}" class="btn btn-info btn-sm">Detail</a>
+              <a href="/barang/find_update/{{$d->id}}" class="btn btn-warning btn-sm">Edit</a>
+              <a href="/barang/find_delete/{{$d->id}}" class="btn btn-danger btn-sm">Delete</a>
             </td>
           </tr> 
           @endforeach 
