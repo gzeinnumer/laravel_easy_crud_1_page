@@ -39,11 +39,11 @@ class BarangController extends Controller
     //update
     public function find_update($id)
     {
-        $find = BarangModel::find($id);
+        $update = BarangModel::find($id);
         $data = BarangModel::all();
         $sent = [
             'data' => $data,
-            'edit' => $find
+            'update' => $update
         ];
         return view('barang.index', $sent);
     }
